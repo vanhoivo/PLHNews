@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+  	<script>tinymce.init({ selector:'textarea' });</script>
+    <nav th:replace="layout :: header"></nav>
+
+    <div>
+    	<div class="container main-content form">
+        <div class="row">
+          <form action="#" th:action="@{/baiviet/save}" th:object="${baiviet}"
+		    method="POST" >
+		    <input type="hidden" th:field="*{id}" />
+		    <div class="form-group">
+		        <label>name</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{name}" />   
+		    </div>
+		    
+		    <div class="form-group">
+		        <label>tomtat</label> 
+		        <input type="text" class="form-control" th:field="*{tomtat}" />
+		    </div>
+		    
+		    <div class="form-group">
+		        <label>tacgia</label> 
+		        <input type="text" class="form-control" th:field="*{tacgia}" />
+		    </div>
+		   
+		    <div class="form-group">
+		        <label>noidung</label> 
+		        <!--<input type="text" class="form-control" th:field="*{noidung}" />-->
+		        <textarea th:field="*{noidung}">Next, get a free Tiny Cloud API key!</textarea>
+		    </div>
+		    
+		    <div class="form-group">
+		        <label>hinh</label> 
+		        <input type="text" class="form-control" th:field="*{hinh}" />
+		    </div>
+		    
+		    <div class="form-group">
+		        <label>madm</label> 
+		        <input type="text" class="form-control" th:field="*{madm}" />
+		    </div>
+		    
+		    <button type="submit" class="btn btn-success">Save</button>
+		</form>
+        </div>
+    </div><!-- /.container -->
+    
+    <br />
+    </div>
+    <br />
+
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>

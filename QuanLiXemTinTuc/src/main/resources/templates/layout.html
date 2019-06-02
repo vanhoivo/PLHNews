@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="shortcut icon" href="images/IMG_Logo_Updated.png"></link>
+<title>PLH News</title>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
+
+<!-- Bootstrap -->
+<link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+    rel="stylesheet" />
+<!-- Custom style -->
+<link href="../static/css/style.css" th:href="@{/css/style.css}"
+    rel="stylesheet" />
+<script th:src="@{/js/Scripts.js}"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+    th:src="@{/webjars/jquery/1.12.4/jquery.min.js}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<nav th:fragment="header"
+		class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/Index" style="color: #fff;">PLH News</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="/Index"><span title="Trang chủ" class="glyphicon glyphicon-home"></span><span class="sr-only">(current)</span></a></li>
+					<li><a href="/TongHop">Tổng hợp</a></li>
+					<li><a href="/DanhMuc">Công nghệ</a></li>
+					<li><a href="/DanhMuc">Giáo dục</a></li>
+					<li class="dropdown"><a href="#menu" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false"><span title="Thêm nữa" class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/DanhMuc">Trong nước</a></li>
+							<li><a href="/DanhMuc">Thế giới</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="/DanhMuc">Đa phương tiện</a></li>
+							<li><a href="/DanhMuc">Thời sự</a></li>
+						</ul></li>
+				</ul>
+				<form class="navbar-form navbar-left" th:action="@{/search}" method="GET">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Nhập ..." name="q"></input>
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="submit"><span title="Tìm kiếm" class="glyphicon glyphicon-search"></span></button>
+						</span>
+					</div>
+					<!-- /input-group -->
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/baiviet">ADM</a></li>
+					<li class="dropdown"><a href="#account" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false"><span title="Tài khoản" class="glyphicon glyphicon-user"></span> <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#edit">Chỉnh sửa</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#sign-out">Đăng xuất</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<h1>Main content</h1>
+
+    <!--Beginning of footer-->
+    <footer class="footer" id="myfooter" style="color: white; background-color: #000;">
+        <div class="container" style="padding-top: 5px; padding-bottom: 5px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="pull-left">
+                    Email: <a href="mailto:che0be0@news.plh.com.vn">che0be0@news.plh.com.vn</a> | 
+                    Phone: <a href="tel:+842577777777">+842577777777</a> | 
+                    Address: <a href="https://goo.gl/maps/pT1ygEpvKoq" target="_blank">721400</a>
+                </span>
+            
+                <span class="pull-right">
+                    <a href=""><i title="Facebook" class="fab fa-facebook-square"></i></a>
+                    <a href=""><i title="Twitter" class="fab fa-twitter-square"></i></a>
+                    <a href=""><i title="Instagram" class="fab fa-instagram"></i></a>
+                </span>
+            </div>
+            
+            <br />
+        
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="pull-left">
+                    &copy; 2018 PLH Vietnam.
+                </span>
+        
+                <a href="#" class="pull-right">Fly &UpArrowBar;</a>
+            </div>
+        </div>
+    </footer>
+    <!--Ending of footer-->
+
+	<style>
+#myfooter {
+	background-color: #000;
+	color: #fff;
+}
+
+img:hover {
+	opacity: 0.5;
+}
+</style>
+</body>
+</html>

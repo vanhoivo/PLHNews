@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body onload="StartTime();">
+	<nav th:replace="layout :: header"></nav>
+	
+	<br />
+	<br />
+
+	<div style="background-color: #f0f0f0;">
+		<div class="container">
+		<div class="row">
+
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<img width="100%;" th:src="${dsbaiviet[0].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[0].id})}"><h4 th:text="${dsbaiviet[0].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<img width="100%;" th:src="${dsbaiviet[10].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[10].id})}"><h4 th:text="${dsbaiviet[10].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="thumbnail">
+					<img width="100%;" th:src="${dsbaiviet[2].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[2].id})}"><h4 th:text="${dsbaiviet[2].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-md-3">
+				<div class="thumbnail" style="height: 300px;">
+					<img width="100%;" th:src="${dsbaiviet[3].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[3].id})}"><h4 th:text="${dsbaiviet[3].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="thumbnail" style="height: 300px;">
+					<img width="53%;" th:src="${dsbaiviet[4].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[4].id})}"><h3 th:text="${dsbaiviet[4].name}"></h3></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-md-3">
+				<div class="thumbnail" style="height: 300px;">
+					<img width="100%;" th:src="${dsbaiviet[5].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[5].id})}"><h4 th:text="${dsbaiviet[5].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-md-3">
+				<div class="thumbnail">
+					<img width="100%;" th:src="${dsbaiviet[6].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[6].id})}"><h4 th:text="${dsbaiviet[6].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="thumbnail">
+					<img width="100%;" th:src="${dsbaiviet[7].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[7].id})}"><h4 th:text="${dsbaiviet[7].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="thumbnail">
+					<img width="100%;" th:src="${dsbaiviet[8].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[8].id})}"><h4 th:text="${dsbaiviet[8].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="thumbnail">
+					<img width="100%;" th:src="${dsbaiviet[9].hinh}" alt="IMG"></img>
+					<div class="caption">
+						<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[9].id})}"><h4 th:text="${dsbaiviet[9].name}"></h4></a>
+						<p>
+							<a href="#" class="btn btn-primary" role="button"><span title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+							<a href="#" class="btn btn-primary" role="button"><span title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<hr style="border-color: blue;" />
+		
+		<div class="toprow">
+            <div class="row">
+            	<div class="col-md-3" style="color: darkgreen;">HÔM NAY</div>
+                <div class="col-md-5" style="color: darkgreen;">
+                    <!--CLOCK-->
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="far fa-clock"></i></li>
+                        <li class="list-inline-item">
+                            <div id="Clock" style="color: darkgreen; margin-left: 3px;"></div>
+                        </li>
+
+                        <li class="list-inline-item">|</li>
+
+                        <li class="list-inline-item"><i class="fas fa-cloud-sun-rain"></i></li>
+                        <li class="list-inline-item">
+                            <div id="Weather" style="color: darkgreen; margin-left: 3px;">Sài Gòn: 31°C</div>
+                        </li>
+
+                        <!-- <li class="nav-item" style="width: 250px; display: flex; align-items: center;">
+                            <i class="far fa-clock"></i>
+                            <div id="Clock" style="color: #000; margin-left: 3px;">zzz</div>
+                        </li>
+
+                        <li class="nav-item" style="width: 250px; display: flex; align-items: center;">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                            <div id="Weather" style="color: #000; margin-left: 3px;">Sài Gòn: 31°C</div>
+                        </li> -->
+                    </ul>
+                </div>
+        
+                <!--TRENDING-->
+                <div class="col-md-4">
+                    <ul class="list-inline" align="right">
+                        <li class="list-inline-item"><a href="">#nghile</a></li>
+                        <li class="list-inline-item"><a href="">#thidaihoc</a></li>
+                        <li class="list-inline-item"><a href="">#c2</a></li>
+                        <li class="list-inline-item"><a href="">#man</a></li>
+                        <li class="list-inline-item"><a href="">#real</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="imagebox">
+					<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[10].id})}">
+						<img th:src="${dsbaiviet[10].hinh}" class="category-banner img-responsive"></img>
+						<span th:text="${dsbaiviet[10].name}" class="imagebox-desc"></span>
+					</a>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="imagebox">
+					<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[11].id})}">
+						<img th:src="${dsbaiviet[11].hinh}" class="category-banner img-responsive"></img>
+						<span th:text="${dsbaiviet[11].name}" class="imagebox-desc"></span>
+					</a>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="imagebox">
+					<a th:href="@{/baiviet/{id}/view(id=${dsbaiviet[12].id})}">
+						<img th:src="${dsbaiviet[12].hinh}" class="category-banner img-responsive"></img>
+						<span th:text="${dsbaiviet[12].name}" class="imagebox-desc"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<div class="container"><hr /></div>
+	</div>
+
+	<footer th:replace="layout :: footer"></footer>
+	
+	<style>
+		.imagebox {
+  background: black;
+  padding: 0px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.imagebox img {
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+
+.imagebox .imagebox-desc {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0px;
+  color: white;
+  font-size: 1.2em;
+  left: 0px;
+  padding: 10px 15px;
+  position: absolute;
+  transition: 0.5s padding;
+  text-align: left;
+  width: 100%;
+}
+
+.imagebox:hover img {
+  opacity: 0.7;
+}
+
+.imagebox:hover .imagebox-desc {
+  padding-bottom: 10%;
+}
+		
+	</style>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<div id="fb-root"></div>
+<script async="async" defer="defer" crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v3.2"></script>
+
+    <nav th:replace="layout :: header"></nav>
+    
+    <br />
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1 th:text="${baiviet.name}"></h1>
+			<p><b th:text="${baiviet.tomtat}"></b></p>
+			<span title="Thông tin" class="glyphicon glyphicon-info-sign"></span> <span th:text="${baiviet.tacgia}"></span>
+			<br />
+			<br />
+			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<img width="100%;" th:src="${baiviet.hinh}" alt="IMG"></img>
+		<br />
+		<br />
+		<p style="font-size: 18px;" th:text="${baiviet.noidung}"></p>
+		
+		<script type="text/javascript">
+
+        var getAbsoluteUrl = (function () {
+            var a;
+            return function (url) {
+                if (!a) a = document.createElement('a');
+                a.href = url;
+                return a.href;
+            };
+        })();
+    </script>
+
+    <div>
+        <div id="fbcm" class="fb-comments" data-href="getAbsoluteUrl();"
+            data-width="100%" data-numposts="5"></div>
+        
+        <script>
+            //document.getElementById("fbc").setAttribute("data-href", getAbsoluteUrl());
+            document.getElementById("fbcm").setAttribute("data-href", window.location.href);
+        </script>
+    </div>
+    
+    <div id="fblk" class="fb-share-button" data-href="" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+	</div>
+	<script>
+            //document.getElementById("fbc").setAttribute("data-href", getAbsoluteUrl());
+            document.getElementById("fblk").setAttribute("data-href", window.location.href);
+        </script>
+    <div class="container"></div>
+
+	<br />
+	
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>

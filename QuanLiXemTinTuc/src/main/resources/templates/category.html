@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body style="background-color: #fff;">
+	<nav th:replace="layout :: header"></nav>
+	
+	<br />
+	<br />
+
+	<div style="background-color: #f0f0f0;">
+		<br />
+		
+		<div class="container">
+		<h2 style="color: #cc0000"><span title="Danh mục" class="glyphicon glyphicon-th-list"></span> TỔNG HỢP</h2>
+		<hr style="border-color: #cc0000" />
+		
+		<th:block th:if="${#lists.isEmpty(dsbaiviet)}">
+			<h3>Không có bài viết!</h3>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(dsbaiviet)}">
+			<div class="row">
+				<div class="col-md-12" th:each="contact,iterStat : ${dsbaiviet}">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="media" style="height: 200px;">
+								<div class="media-left media-middle">
+									<a href=""> <img width="400px;" class="media-object" th:src="${contact.hinh}" alt="IMG"></img>
+									</a>
+								</div>
+								<div class="media-body">
+									<a th:href="@{/baiviet/{id}/view(id=${contact.id})}"><h2 class="media-heading" th:text="${contact.name}"></h2></a>
+									<h4 th:text="${contact.tomtat}"></h4>
+
+										<p>
+											<a href="#" class="btn btn-primary" role="button"><span
+												title="Thích" class="glyphicon glyphicon-thumbs-up"></span></a>
+											<a href="#" class="btn btn-primary" role="button"><span
+												title="Không thích" class="glyphicon glyphicon-thumbs-down"></span></a>
+										</p>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</th:block>
+		
+		 <button type="button" class="btn btn-success btn-lg btn-block"><span title="Thêm" class="glyphicon glyphicon-plus-sign"></span> Thêm nữa</button>
+	</div>
+	
+	<br />
+	</div>
+	
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

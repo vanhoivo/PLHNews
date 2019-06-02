@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+
+	<div class="container main-content list" style="padding-left: 15px; padding-right: 15px;">
+		<div th:if="${success}"
+			class="row alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<span th:text="${success}"></span>
+		</div>
+		
+		<div class="row">
+			<a th:href="@{/baiviet/create}" class="btn btn-success pull-left">
+				<span class="glyphicon glyphicon-plus"></span> Add
+			</a>
+			<form class="form-inline pull-right" action="#"
+				th:action="@{/baiviet/search}" method="GET">
+				<div class="form-group">
+					<input type="text" class="form-control" name="s"
+						placeholder="Input" />
+				</div>
+				<button type="submit" class="btn btn-success">Search</button>
+			</form>
+		</div>
+		
+		<th:block th:if="${#lists.isEmpty(dsbaiviet)}">
+			<h2>Không tìm thấy kết quả nào!</h2>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(dsbaiviet)}">
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead style="background-color: #123; color: #fff;">
+						<tr>
+							<th>STT</th>
+							<th>Tiêu đề</th>
+							<th>Tóm tắt</th>
+							<th>Tác giả</th>
+							<th>Hình ảnh</th>
+							<th>Danh mục</th>
+							<th>View</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="contact,iterStat : ${dsbaiviet}">
+							<td th:text="${iterStat.count}"></td>
+							<td th:text="${contact.name}"></td>
+							<td th:text="${contact.tomtat}"></td>
+							<td th:text="${contact.tacgia}"></td>
+							<td th:text="${contact.hinh}"></td>
+							<td th:text="${contact.madm}"></td>
+							<td><a th:href="@{/baiviet/{id}/view(id=${contact.id})}"><span
+									class="glyphicon glyphicon-eye-open"></span></a></td>
+							<td><a th:href="@{/baiviet/{id}/edit(id=${contact.id})}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="@{/baiviet/{id}/delete(id=${contact.id})}"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</th:block>
+		
+		<p><i>Tổng số: <b><span th:text="${dsbaiviet.size()}"></span></b></i></p>
+	</div>
+	<!-- /.container -->
+	
+	<br />
+	
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
